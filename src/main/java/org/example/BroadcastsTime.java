@@ -36,7 +36,7 @@ public class BroadcastsTime implements Comparable {
     @Override
     public int compareTo(Object o) {
         BroadcastsTime broadcastsTime = (BroadcastsTime) o;
-        if (hour() > broadcastsTime.hour() || hour() == broadcastsTime.hour() & minutes() > broadcastsTime.minutes()) {
+        if ((hour() > broadcastsTime.hour()) || (hour() == broadcastsTime.hour() & minutes() > broadcastsTime.minutes())) {
             return 1;
         } else if (hour() == broadcastsTime.hour() & minutes() == broadcastsTime.minutes()) {
             return 0;

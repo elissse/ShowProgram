@@ -44,8 +44,7 @@ public class AllPrograms {
                 }
                 channel = s.substring(0);
                 chanels++;
-            }
-            else if (!flag) {
+            } else if (!flag) {
                 time = s;
                 flag = true;
             } else {
@@ -62,10 +61,10 @@ public class AllPrograms {
     private void sortAllPrograms() {
         int i = 0;
         boolean swapNeeded = true;
-        while (i < size - 1 && swapNeeded) {
+        while (i < allPrograms.size() - 1 && swapNeeded) {
             swapNeeded = false;
-            for (int j = 1; j < size - i; j++) {
-                if (allPrograms.get(j - 1).getTime().after(allPrograms.get(j).getTime())) {
+            for (int j = 1; j < allPrograms.size() - i; j++) {
+                if (allPrograms.get(j - 1).getTime().compareTo(allPrograms.get(j).getTime()) >= 0) {
                     Program temp = allPrograms.get(j - 1);
                     allPrograms.set(j - 1, allPrograms.get(j));
                     allPrograms.set(j, temp);
